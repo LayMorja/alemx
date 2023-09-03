@@ -1,0 +1,33 @@
+.page {
+  &__protocol {
+    padding: rem(122) 0;
+
+    //== 768px ==//
+    @media (max-width: $mb) {
+      padding: 100px 0;
+    }
+  }
+}
+.protocol {
+  &__container {
+  }
+
+  &__content {
+    grid-column: span 7;
+
+    //== 768px ==//
+    @media (max-width: $mb) {
+      margin-bottom: 40px;
+    }
+  }
+
+  &__image-block {
+    grid-column: 9 / 13;
+  }
+
+  &__title {
+  }
+
+  &__descr {
+  }
+}

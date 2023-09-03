@@ -1,0 +1,188 @@
+.page {
+  &__facts {
+    padding: rem(150) rem(0) rem(150) rem(0);
+
+    //== 768px ==//
+    @media (max-width: $mb) {
+      padding: 100px 0;
+    }
+  }
+}
+.facts {
+  position: relative;
+  &::before,
+  &::after {
+    content: '';
+    position: absolute;
+    pointer-events: none;
+  }
+
+  &::before {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 720px;
+    height: 720px;
+    border-radius: 100%;
+    background-color: rgba(193, 27, 23, 0.2);
+    filter: blur(150px);
+  }
+  &::after {
+    right: 500px;
+    bottom: 320px;
+    @extend %bg-con;
+    width: 341.5px;
+    height: 390.912px;
+    transform: rotate(-54.421deg);
+    background-image: url('@img/image-block/line-2.svg');
+    //== 992px ==//
+    @media (max-width: $tb) {
+      display: none;
+    }
+  }
+  &__container {
+    position: relative;
+    &::before,
+    &::after {
+      content: '';
+      position: absolute;
+      @extend %bg-con;
+      pointer-events: none;
+
+      //== 992px ==//
+      @media (max-width: $tb) {
+        display: none;
+      }
+    }
+    &::before {
+      left: 140px;
+      bottom: 60px;
+      width: 479.5px;
+      height: 122.843px;
+      transform: rotate(-27.554deg);
+      background-image: url('@img/image-block/line-1.svg');
+    }
+    &::after {
+      bottom: 140px;
+      right: 200px;
+      width: 479.5px;
+      height: 122.843px;
+      transform: rotate(23.228deg);
+      background-image: url('@img/image-block/line-3.svg');
+    }
+  }
+  &__title {
+    &:not(:last-child) {
+      margin-bottom: rem(25);
+    }
+  }
+
+  &__row {
+    gap: 20px;
+  }
+
+  &__col {
+    grid-column: span 4;
+    @extend %fl-c;
+    gap: 20px;
+
+    &:first-child {
+      margin-top: 58px;
+      //== 768px ==//
+      @media (max-width: $mb) {
+        margin-top: 0;
+      }
+    }
+    &:last-child {
+      margin-top: -68px;
+      //== 768px ==//
+      @media (max-width: $mb) {
+        margin-top: 0;
+      }
+    }
+
+    //== 768px ==//
+    @media (max-width: $mb) {
+      &:not(:last-child) {
+        margin-bottom: rem(20);
+      }
+    }
+  }
+
+  &__block {
+    position: relative;
+    z-index: 4;
+    padding: 40px 118px 40px 48px;
+    border-radius: 50px;
+    background-color: var(--clr-white);
+    box-shadow: 0px 11px 23px 0px rgba(0, 0, 0, 0.06);
+
+    &::after {
+      content: '';
+      position: absolute;
+      @extend %fl-a-ct;
+      top: 23px;
+      right: 25px;
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      background-color: var(--clr-white);
+      filter: drop-shadow(0px 9px 16px rgba(0, 0, 0, 0.07));
+
+      //== 992px ==//
+      @media (max-width: $tb) {
+        width: 38px;
+        height: 38px;
+        right: 15px;
+        top: 15px;
+      }
+    }
+    &::before {
+      content: '';
+      position: absolute;
+      z-index: 1;
+      top: 45px;
+      right: 42px;
+      width: 21px;
+      height: 16px;
+      @extend %bg-con;
+      background-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0nMjEnIGhlaWdodD0nMTYnIHZpZXdCb3g9JzAgMCAyMSAxNicgZmlsbD0nbm9uZScgeG1sbnM9J2h0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnJz48cGF0aCBmaWxsLXJ1bGU9J2V2ZW5vZGQnIGNsaXAtcnVsZT0nZXZlbm9kZCcgZD0nTTguMTIxMzIgMTAuODE4MUwxOCAwLjkzOTQ1M0wyMC4xMjEzIDMuMDYwNzdMOC4xMjEzMiAxNS4wNjA4TDAgNi45Mzk0NUwyLjEyMTMyIDQuODE4MTNMOC4xMjEzMiAxMC44MTgxWicgZmlsbD0nI0MxMTcyMCcvPjwvc3ZnPg==');
+
+      //== 992px ==//
+      @media (max-width: $tb) {
+        width: 16px;
+        height: 9px;
+        top: 30px;
+        right: 25px;
+      }
+    }
+
+    strong,
+    b {
+      color: var(--clr-black);
+    }
+
+    //== 1200px ==//
+    @media (max-width: $note-m) {
+      border-radius: 30px;
+      padding: 20px 70px 20px 25px;
+      font-size: 20px;
+    }
+  }
+
+  &__block--join {
+    @extend %bg-cov;
+    min-height: 260px;
+    font-weight: 600;
+    color: var(--clr-white);
+    background-color: var(--clr-accent);
+
+    //== 768px ==//
+    @media (max-width: $mb) {
+      min-height: 190px;
+    }
+  }
+
+  &__block--up {
+  }
+}

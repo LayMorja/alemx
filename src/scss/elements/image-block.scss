@@ -1,0 +1,130 @@
+.image-block {
+  position: relative;
+  z-index: 2;
+
+  &::before {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    bottom: -15%;
+    left: 50%;
+    width: 720px;
+    height: 720px;
+    border-radius: 100%;
+    background-color: rgba(205, 27, 24, 0.2);
+    filter: blur(110px);
+    transform: translateX(-50%);
+    pointer-events: none;
+
+    //== 992px ==//
+    @media (max-width: $tb) {
+      width: 480px;
+      height: 480px;
+    }
+  }
+  &::after {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    top: 20px;
+    right: -190px;
+    width: 341.5px;
+    height: 390.912px;
+    transform: rotate(-54.421deg);
+    @extend %bg-con;
+    background-image: url('@img/image-block/line-2.svg');
+    //== 768px ==//
+    @media (max-width: $tb) {
+      display: none;
+    }
+  }
+  &.image-block--dark::after {
+    background-image: url('@img/image-block/line-dark-2.svg');
+  }
+  &.image-block--dark::before {
+    background-color: rgba(193, 27, 23, 0.5);
+  }
+
+  //== 768px ==//
+  @media (max-width: $mb) {
+    text-align: center;
+  }
+
+  &__cover {
+    position: relative;
+    display: block;
+
+    &::before,
+    &::after {
+      content: '';
+      position: absolute;
+      z-index: -1;
+      pointer-events: none;
+      @extend %bg-con;
+      //== 768px ==//
+      @media (max-width: $tb) {
+        display: none;
+      }
+    }
+
+    &::before {
+      left: -100%;
+      bottom: -8px;
+      width: 482.736px;
+      height: 127.153px;
+      transform: rotate(-27.554deg);
+      background-image: url('@img/image-block/line-1.svg');
+      .image-block--dark & {
+        background-image: url('@img/image-block/line-dark-1.svg');
+      }
+    }
+
+    &::after {
+      right: -280px;
+      bottom: 35px;
+      width: 479.5px;
+      height: 122.843px;
+      transform: rotate(23.618deg);
+      background-image: url('@img/image-block/line-3.svg');
+      .image-block--dark & {
+        background-image: url('@img/image-block/line-dark-3.svg');
+      }
+    }
+  }
+
+  &__img {
+    filter: drop-shadow(32px 41px 64px rgba(0, 0, 0, 0.15));
+    //== 992px ==//
+    @media (max-width: $tb) {
+      max-width: 100%;
+      height: auto;
+    }
+  }
+
+  &__icon {
+    position: absolute;
+    bottom: 100px;
+    right: -60px;
+    border-radius: 30px;
+    padding: rem(33) rem(53) rem(33) rem(53);
+    background: var(--clr-white);
+    box-shadow: 0px 11px 23px 0px rgba(0, 0, 0, 0.22);
+
+    //== 1200px ==//
+    @media (max-width: $note-m) {
+      right: -120px;
+      bottom: 80px;
+    }
+    //== 992px ==//
+    @media (max-width: $tb) {
+      border-radius: 20px;
+      right: -20px;
+      bottom: 50px;
+      padding: 20px 25px;
+      svg {
+        width: 46px;
+        height: 46px;
+      }
+    }
+  }
+}

@@ -1,0 +1,42 @@
+//<BUTTONS (a.btn+tab)>
+// Снипет (HTML): btn
+
+.cta {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: rem(25) rem(63) rem(25) rem(63);
+
+  text-align: center;
+
+  color: var(--clr-white);
+  font-weight: 600;
+  line-height: normal;
+
+  &::before {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    border-radius: rem(35);
+    background-color: var(--clr-accent);
+    pointer-events: none;
+    transition: transform 0.32s ease-in-out, opaicty 0.22s ease-in-out;
+  }
+
+  @media (any-hover: hover) {
+    &:hover {
+      &::before {
+        transform: scaleX(1.15);
+        opacity: 0.8;
+      }
+    }
+  }
+  &._fw {
+    width: 100%;
+  }
+}

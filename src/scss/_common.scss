@@ -1,0 +1,149 @@
+[hidden] {
+  display: none;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: rem(20);
+
+  //== 768px ==//
+  @media (max-width: $mb) {
+    display: block;
+  }
+}
+
+.main-title {
+  color: var(--clr-black);
+  font-size: rem(90);
+  font-weight: 600;
+  line-height: math.div(110, 90);
+
+  &::first-letter {
+    color: var(--clr-accent);
+  }
+
+  &:not(:last-child) {
+    margin-bottom: rem(85);
+  }
+
+  &.main-title--white {
+    color: var(--clr-white);
+  }
+
+  @media (max-width: $pc) {
+    font-size: rem(75);
+
+    &:not(:last-child) {
+      margin-bottom: rem(55);
+    }
+  }
+  //== 1200px ==//
+  @media (max-width: $note-m) {
+    font-size: rem(60);
+    &:not(:last-child) {
+      margin-bottom: rem(40);
+    }
+  }
+  //== 992px ==//
+  @media (max-width: $tb) {
+    font-size: rem(46);
+    &:not(:last-child) {
+      margin-bottom: rem(30);
+    }
+  }
+  //== 768px ==//
+  @media (max-width: $mb) {
+    font-size: rem(42);
+  }
+  //== 576px ==//
+  @media (max-width: $mb-m) {
+    font-size: rem(40);
+  }
+}
+
+.text-400 {
+  line-height: normal;
+  font-weight: 400;
+  color: var(--clr-light-grey);
+  font-size: rem(30);
+
+  &.text-400--dark {
+    color: var(--clr-dark-grey);
+  }
+
+  @media (max-width: $pc) {
+    font-size: rem(28);
+  }
+  //== 1200px ==//
+  @media (max-width: $note-m) {
+    font-size: rem(24);
+  }
+  //== 992px ==//
+  @media (max-width: $tb) {
+    font-size: rem(22);
+  }
+  //== 768px ==//
+  @media (max-width: $mb) {
+    font-size: rem(20);
+  }
+}
+
+.text-300 {
+  line-height: normal;
+  font-weight: 400;
+  color: var(--clr-white);
+  font-size: rem(22);
+
+  &.text-300--dark {
+    color: var(--clr-dark-grey);
+  }
+
+  //== 1200px ==//
+  @media (max-width: $note-m) {
+    font-size: rem(20);
+  }
+  //== 992px ==//
+  @media (max-width: $tb) {
+    font-size: rem(18);
+  }
+  //== 768px ==//
+  @media (max-width: $mb) {
+    font-size: rem(16);
+  }
+}
+
+._dark {
+  background-color: var(--clr-black);
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  border: 0;
+  clip: rect(0 0 0 0);
+}
+
+.simplebar-track {
+  right: 25px;
+  background-color: #dee6f4;
+  border-radius: 10px;
+  margin-bottom: 22px;
+  margin-top: 5px;
+}
+.simplebar-track.simplebar-vertical {
+  width: 4px;
+}
+.simplebar-scrollbar:before {
+  top: 0;
+  bottom: 0;
+  left: -1px;
+  right: -1px;
+  width: 6px;
+  background-color: #f05c63;
+  border-radius: 10px;
+}

@@ -1,0 +1,122 @@
+.page {
+  &__benefits {
+    @include adaptiveValue('padding-top', 134, 70);
+    @include adaptiveValue('padding-bottom', 125, 80);
+  }
+}
+.benefits {
+  position: relative;
+  &::before,
+  &::after {
+    content: '';
+    position: absolute;
+    pointer-events: none;
+  }
+
+  &::before {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 720px;
+    height: 720px;
+    border-radius: 100%;
+    background-color: rgba(193, 27, 23, 0.5);
+    filter: blur(150px);
+  }
+  &::after {
+    right: 500px;
+    bottom: 320px;
+    @extend %bg-con;
+    width: 341.5px;
+    height: 390.912px;
+    transform: rotate(-54.421deg);
+    background-image: url('@img/image-block/line-dark-2.svg');
+  }
+  &__container {
+    position: relative;
+    &::before,
+    &::after {
+      content: '';
+      position: absolute;
+      @extend %bg-con;
+      pointer-events: none;
+    }
+    &::before {
+      left: 140px;
+      bottom: 60px;
+      width: 479.5px;
+      height: 122.843px;
+      transform: rotate(-27.554deg);
+      background-image: url('@img/image-block/line-dark-1.svg');
+    }
+    &::after {
+      bottom: 140px;
+      right: 200px;
+      width: 479.5px;
+      height: 122.843px;
+      transform: rotate(23.228deg);
+      background-image: url('@img/image-block/line-dark-3.svg');
+    }
+  }
+
+  &__title {
+  }
+
+  &__list {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: rem(20);
+  }
+
+  &__item {
+    @extend %fl-r-ct;
+    gap: rem(30);
+    width: calc(100% / 3 - rem(20));
+    border-radius: 50px;
+    padding: rem(30);
+    background: linear-gradient(180deg, #2a333e 0%, #1f2730 100%);
+
+    //== 1200px ==//
+    @media (max-width: $note-m) {
+      border-radius: rem(30);
+      width: calc(100% / 2 - rem(20));
+      padding: 20px 25px;
+      gap: 20px;
+    }
+
+    //== 768px ==//
+    @media (max-width: $mb) {
+      width: 100%;
+    }
+  }
+
+  &__icon {
+    overflow: hidden;
+    @extend %fl-a-ct;
+    flex: 0 0 rem(148);
+    height: rem(135);
+    border-radius: rem(44);
+    background-color: var(--clr-white);
+
+    //== 1200px ==//
+    @media (max-width: $note-m) {
+      flex: 0 0 rem(120);
+      height: rem(120);
+      border-radius: rem(20);
+    }
+    //== 768px ==//
+    @media (max-width: $mb) {
+      padding: 28px 33px;
+      flex: 0 0 rem(104);
+      height: rem(95);
+      border-radius: rem(22);
+    }
+  }
+
+  &__text {
+  }
+}

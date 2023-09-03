@@ -1,0 +1,149 @@
+.page {
+  &__types {
+    @include adaptiveValue('padding-top', 165, 85);
+    @include adaptiveValue('padding-bottom', 170, 80);
+  }
+}
+.types {
+  &__container {
+    position: relative;
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 720px;
+      height: 720px;
+      border-radius: 100%;
+      background-color: rgba(193, 27, 23, 0.5);
+      filter: blur(120px);
+      transform: translate(-50%, -50%);
+    }
+
+    //== 992px ==//
+    @media (max-width: $tb) {
+      flex-wrap: wrap;
+      align-content: center;
+    }
+  }
+
+  &__card {
+    position: relative;
+    z-index: 2;
+    width: calc(100% / 3 - 20px);
+    border-radius: 50px;
+    flex-grow: 1;
+
+    //== 992px ==//
+    @media (max-width: $tb) {
+      width: calc(100% / 2 - 20px);
+    }
+    //== 576px ==//
+    @media (max-width: $mb-m) {
+      width: 100%;
+    }
+  }
+
+  &__image {
+    border-radius: 50px 50px 0 0;
+    height: 360px;
+    @extend %bg-cov;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+
+    //== 1200px ==//
+    @media (max-width: $note-m) {
+      height: 250px;
+    }
+  }
+
+  &__icon {
+    border-radius: 30px;
+    padding: rem(33) rem(56) rem(38) rem(56);
+    background: var(--clr-white);
+    box-shadow: 0px 8px 22px 0px rgba(0, 0, 0, 0.09);
+    margin-bottom: -37px;
+    margin-right: 27px;
+    //== 1200px ==//
+    @media (max-width: $note-m) {
+      padding: 25px 35px 30px;
+    }
+    //== 576px ==//
+    @media (max-width: $mb-m) {
+      padding: 25px 40px;
+    }
+  }
+  &__icon svg {
+    filter: drop-shadow(0px 9px 18px rgba(0, 0, 0, 0.15));
+    //== 1200px ==//
+    @media (max-width: $note-m) {
+      width: 60px;
+      height: 60px;
+    }
+  }
+
+  &__content {
+    border-radius: 0 0 50px 50px;
+    padding: 70px 35px 33px 32px;
+    background-color: var(--clr-white);
+
+    //== 1200px ==//
+    @media (max-width: $note-m) {
+      padding: 50px 35px 30px;
+    }
+    //== 992px ==//
+    @media (max-width: $tb) {
+      padding: 35px 30px 25px;
+    }
+    //== 768px ==//
+    @media (max-width: $mb) {
+      padding: 42px 30px 30px;
+    }
+  }
+
+  &__subtitle {
+    font-weight: 700;
+    font-size: rem(26);
+    line-height: normal;
+
+    &:not(:last-child) {
+      margin-bottom: rem(20);
+      //== 768px ==//
+      @media (max-width: $mb) {
+        margin-bottom: 16px;
+      }
+    }
+    //== 1200px ==//
+    @media (max-width: $note-m) {
+      font-size: 24px;
+    }
+    //== 992px ==//
+    @media (max-width: $tb) {
+      font-size: 22px;
+    }
+    //== 768px ==//
+    @media (max-width: $mb) {
+      font-size: 20px;
+    }
+  }
+
+  &__text {
+    //== 1200px ==//
+    @media (max-width: $note-m) {
+      font-size: 20px;
+    }
+    //== 992px ==//
+    @media (max-width: $tb) {
+      font-size: 17px;
+    }
+    //== 768px ==//
+    @media (max-width: $mb) {
+      font-size: 15px;
+    }
+  }
+}
