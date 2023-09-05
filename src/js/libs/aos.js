@@ -3,12 +3,11 @@
 import AOS from 'aos';
 //* Подключение набора стилей
 // import "aos/dist/aos.css";
-
 //* Подключение списка активных модулей
 import { flsModules } from '../files/modules.js';
 flsModules.animos = AOS.init({
   // Global settings:
-  disable: 'phone',
+  disable: 'mobile',
   offset: 30,
   duration: 400, // values from 0 to 3000, with step 50ms
   easing: 'ease-in-out', // default easing for AOS animations
