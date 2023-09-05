@@ -3,7 +3,7 @@
     padding: rem(150) rem(0) rem(150) rem(0);
 
     //== 768px ==//
-    @media (max-width: $mb) {
+    @media (max-width: $tb) {
       padding: 100px 0;
     }
   }
@@ -27,49 +27,7 @@
     background-color: rgba(193, 27, 23, 0.2);
     filter: blur(150px);
   }
-  &::after {
-    right: 500px;
-    bottom: 320px;
-    @extend %bg-con;
-    width: 341.5px;
-    height: 390.912px;
-    transform: rotate(-54.421deg);
-    background-image: url('@img/image-block/line-2.svg');
-    //== 992px ==//
-    @media (max-width: $tb) {
-      display: none;
-    }
-  }
   &__container {
-    position: relative;
-    &::before,
-    &::after {
-      content: '';
-      position: absolute;
-      @extend %bg-con;
-      pointer-events: none;
-
-      //== 992px ==//
-      @media (max-width: $tb) {
-        display: none;
-      }
-    }
-    &::before {
-      left: 140px;
-      bottom: 60px;
-      width: 479.5px;
-      height: 122.843px;
-      transform: rotate(-27.554deg);
-      background-image: url('@img/image-block/line-1.svg');
-    }
-    &::after {
-      bottom: 140px;
-      right: 200px;
-      width: 479.5px;
-      height: 122.843px;
-      transform: rotate(23.228deg);
-      background-image: url('@img/image-block/line-3.svg');
-    }
   }
   &__title {
     &:not(:last-child) {

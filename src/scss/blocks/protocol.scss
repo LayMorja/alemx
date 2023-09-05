@@ -3,7 +3,7 @@
     padding: rem(122) 0;
 
     //== 768px ==//
-    @media (max-width: $mb) {
+    @media (max-width: $tb) {
       padding: 100px 0;
     }
   }
@@ -15,6 +15,10 @@
   &__content {
     grid-column: span 7;
 
+    //== 1200px ==//
+    @media (max-width: $note-m) {
+      grid-column: span 6;
+    }
     //== 768px ==//
     @media (max-width: $mb) {
       margin-bottom: 40px;
@@ -23,6 +27,20 @@
 
   &__image-block {
     grid-column: 9 / 13;
+    @media (max-width: $pc) {
+      grid-column: 8 / 13;
+    }
+    //== 1200px ==//
+    @media (max-width: $note-m) {
+      grid-column: 7 / 13;
+    }
+
+    //== 768px ==//
+    @media (max-width: $mb) {
+      max-width: 450px;
+      margin-left: auto;
+      margin-right: auto;
+    }
   }
 
   &__title {

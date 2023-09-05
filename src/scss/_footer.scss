@@ -12,13 +12,13 @@
     //== 992px ==//
     @media (max-width: $tb) {
       padding-top: 70px;
-      padding-bottom: 65px;
+      padding-bottom: 0;
     }
   }
 
   &__container {
     position: relative;
-    z-index: 5;
+    z-index: 15;
     background-color: var(--clr-white);
     padding-top: 20px;
     padding-bottom: 15px;
@@ -30,21 +30,28 @@
 }
 .contacts {
   position: relative;
-  //== 992px ==//
-  @media (max-width: $tb) {
-    padding-bottom: 100vh;
-  }
   &__container {
-    position: relative;
-    z-index: 2;
+    //== 992px ==//
+    @media (max-width: $tb) {
+      padding-bottom: 60px;
+    }
   }
 
   &__title {
     max-width: 50%;
+    padding-right: 20px;
+    //== 992px ==//
+    @media (max-width: $tb) {
+      max-width: none;
+    }
 
     &:not(:last-child) {
       margin-bottom: rem(65);
       //== 768px ==//
+      //== 992px ==//
+      @media (max-width: $tb) {
+        margin-bottom: 45px;
+      }
       @media (max-width: $mb) {
         margin-bottom: 35px;
       }
@@ -52,10 +59,19 @@
   }
 
   &__list {
+    padding-right: 20px;
     max-width: 50%;
 
     &:not(:last-child) {
       margin-bottom: rem(70);
+    }
+
+    //== 992px ==//
+    @media (max-width: $tb) {
+      max-width: none;
+      &:not(:last-child) {
+        margin-bottom: rem(0);
+      }
     }
   }
 
@@ -83,10 +99,19 @@
   }
 
   &__link {
+    justify-self: start;
     grid-column: 2;
+    transition: color 0.32s ease-in-out;
+    @media (any-hover: hover) {
+      &:hover {
+        color: var(--clr-white);
+      }
+    }
   }
 
   &__columns {
+    position: relative;
+    z-index: 20;
     columns: 3;
     column-gap: 65px;
     border-radius: 50px;
@@ -104,14 +129,12 @@
       display: none;
       //== 768px ==//
       @media (max-width: $tb) {
-        display: block;
-        position: absolute;
+        display: flex;
+        width: 100%;
+        flex-direction: column;
         height: 405px;
-        bottom: 20px;
         margin-bottom: 20px;
-        top: 100vh;
-        right: 20px;
-        width: calc(100% - 40px);
+
         padding: 35px 50px 34px 37px;
         border-radius: 30px;
         background: linear-gradient(180deg, #2a333e 0%, #1f2730 100%);
@@ -129,13 +152,16 @@
       }
       .simplebar-track {
         background-color: #35404e;
-        margin-top: 35px;
-        margin-bottom: 40px;
+        right: 0;
+        margin-bottom: 0;
       }
       .simplebar-scrollbar:before {
         background-color: #f05c63;
       }
     }
+  }
+  .contacts__columns-content {
+    max-height: 100%;
   }
 
   &__columns-list {
@@ -143,18 +169,29 @@
 
   &__map {
     position: absolute;
+    z-index: 12;
     top: 0;
     right: 0;
     width: 50%;
     height: 100%;
 
+    iframe {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      filter: brightness(0.7) grayscale(0.5);
+    }
+
     //== 992px ==//
     @media (max-width: $tb) {
-      top: 50%;
-      right: 0;
-      left: 0;
+      position: relative;
+      display: flex;
+      align-items: flex-end;
+      padding: 0 20px 20px 20px;
+      min-height: 770px;
       width: 100%;
-      height: 100vh;
     }
   }
 }

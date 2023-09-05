@@ -11,6 +11,10 @@
   @media (max-width: $mb) {
     display: block;
   }
+
+  &.container {
+    align-items: center;
+  }
 }
 
 .main-title {
@@ -47,17 +51,13 @@
   }
   //== 992px ==//
   @media (max-width: $tb) {
-    font-size: rem(46);
+    font-size: rem(42);
     &:not(:last-child) {
       margin-bottom: rem(30);
     }
   }
   //== 768px ==//
   @media (max-width: $mb) {
-    font-size: rem(42);
-  }
-  //== 576px ==//
-  @media (max-width: $mb-m) {
     font-size: rem(40);
   }
 }
@@ -81,10 +81,6 @@
   }
   //== 992px ==//
   @media (max-width: $tb) {
-    font-size: rem(22);
-  }
-  //== 768px ==//
-  @media (max-width: $mb) {
     font-size: rem(20);
   }
 }

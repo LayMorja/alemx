@@ -4,7 +4,7 @@
     padding-bottom: rem(160);
 
     //== 768px ==//
-    @media (max-width: $mb) {
+    @media (max-width: $tb) {
       padding-bottom: 135px;
     }
   }
@@ -12,6 +12,19 @@
 .about {
   &__image-block {
     grid-column: span 4;
+    //== 1200px ==//
+    @media (max-width: $note-m) {
+      grid-column: span 5;
+    }
+    //== 1024px ==//
+    @media (max-width: $note-s) {
+      grid-column: span 6;
+      margin-right: 20px;
+    }
+    //== 768px ==//
+    @media (max-width: $mb) {
+      margin-right: auto;
+    }
   }
   &__container {
     align-items: center;

@@ -4,7 +4,7 @@
     margin-bottom: rem(120);
 
     //== 768px ==//
-    @media (max-width: $mb) {
+    @media (max-width: $tb) {
       padding-top: 105px;
     }
   }
@@ -77,6 +77,10 @@
 
     @media (max-width: $pc) {
       grid-column: 8 / 13;
+    }
+    //== 1200px ==//
+    @media (max-width: $note-m) {
+      grid-column: 7 / 13;
     }
   }
 }
